@@ -1,22 +1,17 @@
 #include "Reader.h"
 #include <string>
 #include <sstream>
-#include "Point.h"
-#include <vector>
 #include <unordered_map>
 
-vector<Point> extractedPoints;
-vector<double> uniqueCoordinates;
-
-vector<Point> Reader::reader() {
-    ifstream stlFile("cube-ascii.stl");
-    unordered_map<double, int> coordinateMap;
-    string stlLine;
+std::vector<Point> Reader::reader() {
+    std::ifstream stlFile("cube-ascii.stl");
+    std::unordered_map<double, int> coordinateMap;
+    std::string stlLine;
     int currentIndex = 0, xIndex, yIndex, zIndex;
 
     while (getline(stlFile, stlLine)) {
-        string keyword;
-        istringstream lineStream(stlLine);
+        std::string keyword;
+        std::istringstream lineStream(stlLine);
         double xCoord, yCoord, zCoord;
 
         if (lineStream >> keyword >> xCoord >> yCoord >> zCoord) {
@@ -59,6 +54,6 @@ vector<Point> Reader::reader() {
     return extractedPoints;
 }
 
-vector<double> Reader::unique() {
+std::vector<double> Reader::unique() const {
     return uniqueCoordinates;
 }
