@@ -3,11 +3,14 @@
 using namespace std;
 
 class Point {
-public:
+private:
     int x, y, z;
 
+public:
     Point(int x, int y, int z);
     ~Point();
-    void getCoordinates();
+    void getCoordinates() const;
+    int getX() const;
+    int getY() const;
+    int getZ() const;
 };
-
