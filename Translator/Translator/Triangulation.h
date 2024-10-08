@@ -4,7 +4,9 @@
 #include <vector>
 
 class Triangulation {
+private:
+    std::vector<double> points;
+
 public:
-    vector<double> points;
-    vector<Triangle> addUniquePoints(vector<Point> points);
+    std::vector<Triangle> addUniquePoints(std::vector<Point> points);
 };
