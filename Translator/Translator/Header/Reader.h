@@ -4,10 +4,12 @@
 #include <vector>
 #include "Point.h"
 
-using namespace std;
-
 class Reader {
+private:
+    std::vector<Point> extractedPoints;
+    std::vector<double> uniqueCoordinates;
+
 public:
-    vector<Point> reader();
-    vector<double> unique();
+    std::vector<Point> reader();
+    std::vector<double> unique() const;
 };
