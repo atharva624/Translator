@@ -4,6 +4,8 @@ Point::Point(int xCoord, int yCoord, int zCoord) : x(xCoord), y(yCoord), z(zCoor
 
 Point::~Point() {}
 
-void Point::getCoordinates() {
-    cout << "(" << x << "," << y << "," << z << ")" << endl;
-}
+
+
+int Point::getX() const { return x; }
+int Point::getY() const { return y; }
+int Point::getZ() const { return z; }
